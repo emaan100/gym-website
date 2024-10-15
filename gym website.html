@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gym Website</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            color: #ff6347;
+        }
+
+        p {
+            text-align: center;
+            font-size: 1.1rem;
+        }
+
+        /* Navbar */
+        nav {
+            background-color: #ff6347;
+            padding: 15px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 1.1rem;
+            font-weight: bold;
+            display: inline-block;
+        }
+
+        nav a:hover {
+            background-color: #e5533d;
+            border-radius: 5px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background-image: url('gym.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 500px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .hero button {
+            background-color: #ff6347;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            cursor: pointer;
+            font-size: 1.2rem;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .hero button:hover {
+            background-color: #e5533d;
+        }
+
+        /* About Us Section */
+        .about-us {
+            background-color: #fff;
+            padding: 50px 20px;
+        }
+
+        .about-us p {
+            text-align: left;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+            color: #666;
+        }
+
+        .success-stories {
+        background-color: #f9f9f9;
+        padding: 50px 20px;
+    }
+
+    .success-stories h2 {
+        text-align: center;
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+        color: #ff6347;
+    }
+
+   /* Success Stories Section */
+   .success-stories {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 50px 20px;
+            border-radius: 10px;
+            margin: 20px;
+        }
+
+        .story {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .story img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+
+        .story h3 {
+            font-size: 1.5rem;
+            color: #333;
+        }
+
+
+    
+
+        .review strong {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+            color: #ff6347;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav>
+        <a href="#hero">Home</a>
+        <a href="classes.html">Classes</a>
+        <a href="memebrship.html">Membership</a>
+        <a href="contactus.html">Contact Us</a>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <h1>Your Fitness Journey Starts Here</h1>
+        <button onclick="location.href='memebrship.html'">Join Now</button>
+    </section>
+
+    <!-- About Us Section -->
+    <section class="about-us" id="about-us">
+        <div class="container">
+            <h2>About Us</h2>
+            <p>We are a community-focused gym committed to helping you achieve your fitness goals. Whether you are here to build strength, improve endurance, or maintain your health, we provide the environment, tools, and support you need to succeed. With experienced trainers and state-of-the-art equipment, we aim to empower you every step of the way on your fitness journey.</p>
+        </div>
+    </section>
+
+    <!-- Success Stories Section -->
+    <section class="success-stories" id="success-stories">
+        <div class="container">
+            <h2>Success Stories</h2>
+
+            <div class="story">
+                <img src="sara.avif" alt="Happy Customer 1">
+                <h3>Sarah’s Transformation</h3>
+                <p>"Joining this gym was the best decision I ever made. I lost 20 pounds in just three months, and I feel stronger and more confident than ever."</p>
+            </div>
+
+            <div class="story">
+                <img src="john.avif" alt="Happy Customer 2">
+                <h3>John’s Strength Journey</h3>
+                <p>"With the support of the trainers here, I was able to bench press 200 lbs in just six months. The results have been amazing!"</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section class="reviews" id="reviews">
+        <div class="container">
+            <h2>Customer Reviews</h2>
+
+            <div class="review">
+                <p>"The best gym in town! The trainers are friendly, and the environment is motivating."</p>
+                <strong>- Emma</strong>
+            </div>
+
+            <div class="review">
+                <p>"I love the variety of classes offered here. There’s something for everyone."</p>
+                <strong>- Mark</strong>
+            </div>
+
+            <div class="review">
+                <p>"The equipment is top-notch, and I always leave the gym feeling accomplished."</p>
+                <strong>- Sophia</strong>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Gym Name. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
+

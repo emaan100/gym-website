@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Membership Form with Payment Options</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 1rem;
+            margin-bottom: 5px;
+        }
+
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 10px;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .form-group button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #28a745;
+            color: white;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+
+        .form-group button:hover {
+            background-color: #218838;
+        }
+
+        .radio-group {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .radio-group label {
+            margin-right: 10px;
+        }
+
+        /* Success Message */
+        .success-message {
+            display: none;
+            background-color: #d4edda;
+            color: #155724;
+            padding: 10px;
+            margin-top: 20px;
+            text-align: center;
+            border: 1px solid #c3e6cb;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Membership Form</h2>
+        <!-- Membership Form -->
+        <form id="membershipForm">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" placeholder="Enter your name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="Enter your email" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone</label>
+                <input type="tel" id="phone" placeholder="Enter your phone number" required>
+            </div>
+            <div class="form-group">
+                <label for="membershipType">Membership Type</label>
+                <select id="membershipType" required>
+                    <option value="" disabled selected>Select your membership</option>
+                    <option value="Monthly">Monthly</option>
+                    <option value="Weekly">Weekly</option>
+                    <option value="Yearly">Yearly</option>
+                </select>
+            </div>
+
+            <!-- Payment Options -->
+            <div class="form-group">
+                <label for="paymentMethod">Payment Method</label>
+                <div class="radio-group">
+                    <label>
+                        <input type="radio" name="paymentMethod" value="Card" required> Card (Credit/Debit)
+                    </label>
+                    <label>
+                        <input type="radio" name="paymentMethod" value="Inline"> Inline (Online Payment)
+                    </label>
+                    <label>
+                        <input type="radio" name="paymentMethod" value="Cash"> Cash
+                    </label>
+                </div>
+            </div>
+
+            <!-- Card Payment Fields (only shown when Card is selected) -->
+            <div id="cardDetails" style="display: none;">
+                <div class="form-group">
+                    <label for="cardNumber">Card Number</label>
+                    <input type="text" id="cardNumber" placeholder="Enter your card number">
+                </div>
+                <div class="form-group">
+                    <label for="expiryDate">Expiry Date</label>
+                    <input type="text" id="expiryDate" placeholder="MM/YY">
+                </div>
+                <div class="form-group">
+                    <label for="cvv">CVV</label>
+                    <input type="text" id="cvv" placeholder="123">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <button type="submit">Submit Membership</button>
+            </div>
+        </form>
+
+        <!-- Success Message -->
+        <div class="success-message" id="successMessage">
+            Form submitted successfully!
+        </div>
+    </div>
+
+    <script>
+        // JavaScript to handle form submission and payment option behavior
+        document.getElementById('membershipForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent page reload
+
+            // Validate form inputs
+            var name = document.getElementById('name').value;
+            var email = document.getElementById('email').value;
+            var phone = document.getElementById('phone').value;
+            var membershipType = document.getElementById('membershipType').value;
+            var paymentMethod = document.querySelector('input[name="paymentMethod"]:checked').value;
+
+            if (name && email && phone && membershipType && paymentMethod) {
+                // If all fields are filled, show the success message
+                document.getElementById('successMessage').style.display = 'block';
+
+                // Optionally, reset the form
+                document.getElementById('membershipForm').reset();
+                document.getElementById('cardDetails').style.display = 'none'; // Hide card details if shown
+            } else {
+                // Handle validation failure
+                alert("Please fill out all required fields.");
+            }
+        });
+
+        // Show/hide card details based on selected payment method
+        document.querySelectorAll('input[name="paymentMethod"]').forEach(function(radio) {
+            radio.addEventListener('change', function() {
+                if (this.value === 'Card') {
+                    document.getElementById('cardDetails').style.display = 'block';
+                } else {
+                    document.getElementById('cardDetails').style.display = 'none';
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>

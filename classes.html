@@ -1,0 +1,148 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+/* Classes Section */
+.classes {
+    background-color: #fff;
+    padding: 50px 20px;
+}
+
+.classes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.class-card {
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.class-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover; /* This ensures that the images fit well without distortion */
+}
+
+.class-info {
+    padding: 20px;
+    text-align: center;
+}
+
+.class-info h3 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.class-info p {
+    font-size: 1rem;
+    margin-bottom: 15px;
+    color: #666;
+}
+
+.class-info strong {
+    color: #ff6347;
+}
+
+.class-card:hover {
+    transform: translateY(-10px);
+}
+
+.btn {
+    background-color: #ff6347;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #e5533d;
+}
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+<body>
+    <!-- Classes Section -->
+<section class="classes" id="classes">
+    <div class="container">
+        <h2>Our Classes</h2>
+        <p>Discover a variety of fitness classes designed for every fitness level. Whether you're a beginner or an experienced athlete, we have a class for you.</p>
+        <div class="classes-grid">
+            <!-- Class 1 -->
+            <div class="class-card">
+                <img src="yoga.jfif" alt="Yoga Class">
+                <div class="class-info">
+                    <h3>Yoga</h3>
+                    <p>Find your balance with our calming yoga sessions. Perfect for improving flexibility and mindfulness.</p>
+                    <p><strong>Time:</strong> Monday - Friday, 7:00 AM - 8:00 AM</p>
+                    <button class="btn" onclick="location.href='contactus.html'">Join Now</button>
+                </div>
+            </div>
+            <!-- Class 2 -->
+            <div class="class-card">
+                <img src="strength.jfif" alt="Strength Training Class">
+                <div class="class-info">
+                    <h3>Strength Training</h3>
+                    <p>Build muscle and strength with our expert-led strength training sessions.</p>
+                    <p><strong>Time:</strong> Monday, Wednesday, Friday, 6:00 PM - 7:00 PM</p>
+                    <button class="btn" onclick="location.href='contactus.html'">Join Now</button>
+                </div>
+            </div>
+            <!-- Class 3 -->
+            <div class="class-card">
+                <img src="high.jfif" alt="HIIT Class">
+                <div class="class-info">
+                    <h3>HIIT (High-Intensity Interval Training)</h3>
+                    <p>Get your heart pumping with our high-energy HIIT sessions designed to burn calories fast.</p>
+                    <p><strong>Time:</strong> Tuesday, Thursday, 5:30 PM - 6:30 PM</p>
+                    <button class="btn" onclick="location.href='contactus.html'">Join Now</button>
+                </div>
+            </div>
+            <!-- Class 4 -->
+            <div class="class-card">
+                <img src="spin.jfif" alt="Spin Class">
+                <div class="class-info">
+                    <h3>Spin Class</h3>
+                    <p>Push your endurance and power with our fast-paced spin classes.</p>
+                    <p><strong>Time:</strong> Monday - Friday, 6:00 PM - 7:00 PM</p>
+                    <button class="btn" onclick="location.href='contactus.html'">Join Now</button>
+                </div>
+            </div>
+            <!-- Class 5 -->
+            <div class="class-card">
+                <img src="boxing.jfif" alt="Boxing Class">
+                <div class="class-info">
+                    <h3>Boxing</h3>
+                    <p>Learn the fundamentals of boxing while getting a full-body workout.</p>
+                    <p><strong>Time:</strong> Saturday, 10:00 AM - 11:30 AM</p>
+                    <button class="btn" onclick="location.href='contactus.html'">Join Now</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+</body>
+</html>
